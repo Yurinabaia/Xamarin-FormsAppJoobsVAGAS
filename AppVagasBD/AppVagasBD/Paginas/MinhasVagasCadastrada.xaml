@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppVagasBD.Paginas.MinhasVagasCadastrada">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Vagas" TextColor="red" FontSize="24"/>
+                <Label Text="Enonctre seu emprego aqui" TextColor="red" FontSize="24"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button  Text="Adicionar"/>
+                <Button Text="MinhasVagas"/>
+            </StackLayout>
+            <Entry Placeholder="Pesquisar" TextChanged="FiltraVaga" />
+            <Label Text="" x:Name="LBLCUNT"/>
+            <ListView x:Name="LISTAVAGA" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                    <Label Text="{Binding NomeVagas}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Empresa}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Cidade}"  FontAttributes="Bold"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Column="1">
+                                    <Label Text="Editar" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="EditarVaga" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="|" />
+                                    <Label Text="Excluir"
+                                           >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ExcluirVaga" CommandParameter="{Binding .}"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

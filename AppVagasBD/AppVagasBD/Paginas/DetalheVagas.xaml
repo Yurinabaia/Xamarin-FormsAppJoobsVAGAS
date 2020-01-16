@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppVagasBD.Paginas.DetalheVagas">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="TEXTOPRINCIPAL" FontSize="22" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label x:Name="NomeEMPRESA" Text="{Binding Empresa}" FontSize="15" HorizontalOptions="Center" TextColor="#DDDDDD"/>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="QUANTIDADE" Text="{Binding Quantidade}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="CIDADE" Text="{Binding Cidade}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="SALARIO" Text="{Binding Salario}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="DESCRICAO" Text="{Binding Descricao}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="TIPODEVAGA" Text="{Binding TipoDeContato}" FontAttributes="Bold"/>
+            </StackLayout> 
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="TELEFONE" Text="{Binding Telefone}" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="EMAIL" Text="{Binding Email}" FontAttributes="Bold"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
